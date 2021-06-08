@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+</head>
+<body>
+    <input type="number" id="v1">
+    <input type="number" id="v2">
+    <button onclick="evento()">APERTAR</button>
+    <script>
+        function evento (){
+            var v1 = document.getElementById('v1').value;
+            var v2 = document.getElementById('v2').value;
+            var r = Number(v1) + Number(v2)
+            alert(r)
+            }
+    </script>
+</body>
+</html>
