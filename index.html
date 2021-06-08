@@ -5,18 +5,103 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Básica</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .number{
+            width: 200px;
+            height: 30px;
+            margin: 0px 20px;
+        }
+        #corpo{
+            background-color: rgba(0, 0, 0, 0.562);
+            display: flex;
+            justify-content: center;
+            height: auto;
+            width: 300px;
+            flex-wrap: wrap;
+            border: 1px solid;            
+        }
+        #screen{
+            background-color: rgba(255, 255, 255, 0.719);
+            width: 230px;
+            height: 60px;
+            border: 1px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        #keyboard{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            height: 320px;
+            column-gap: 10px;
+            row-gap: 15px;
+            align-content: center;
+            text-align: center;
+        }
+        #resultado{
+            width: 200px;
+            border-radius: 5px;
+        }
+        .digitoses{
+            border-radius: 100%;
+            width: 45px;
+            height: 45px;    
+            font-size: 20px;
+            color: white;
+            background-color: #000000;
+        }
+
+    </style>
 </head>
 <body>
-    <input type="number" id="v1">
-    <input type="number" id="v2">
-    <button onclick="evento()">APERTAR</button>
-    <script>
-        function evento (){
-            var v1 = document.getElementById('v1').value;
-            var v2 = document.getElementById('v2').value;
-            var r = Number(v1) + Number(v2)
-            alert(r)
-            }
-    </script>
+    <div id="corpo">
+        <div id="keyboard">
+            <h3>Escolha dois números e a operação desejada:</h4>
+            <input type="number" class="number" id="v1" placeholder="Digite um número ...">
+            <input type="number" class="number" id="v2" placeholder="Digite um número ...">
+            <button class='digitoses'  onclick="subtrair()">-</button>
+            <button class='digitoses' onclick="dividir()">/</button>
+            <button class='digitoses' onclick="multiplicar()">*</button>
+            <button class='digitoses' onclick="somar()">+</button>
+        </div>
+        <div id="screen"></div>
+    
+        <script>
+            function somar (){
+                var v1 = document.getElementById('v1').value;
+                var v2 = document.getElementById('v2').value;
+                var r = Number(v1) + Number(v2);
+                document.getElementById('screen').innerHTML = r;
+                }
+            function subtrair (){
+                var v1 = document.getElementById('v1').value;
+                var v2 = document.getElementById('v2').value;
+                var r = Number(v1) - Number(v2);
+                document.getElementById('screen').innerHTML = r;
+                }
+            function dividir (){
+                var v1 = document.getElementById('v1').value;
+                var v2 = document.getElementById('v2').value;
+                var r = Number(v1) / Number(v2);
+                document.getElementById('screen').innerHTML = r;
+                }
+            function multiplicar (){
+                var v1 = document.getElementById('v1').value;
+                var v2 = document.getElementById('v2').value;
+                var r = Number(v1) * Number(v2);
+                document.getElementById('screen').innerHTML = r;
+                }
+        </script>
+    </div>
 </body>
 </html>
